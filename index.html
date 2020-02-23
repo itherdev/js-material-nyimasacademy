@@ -1,0 +1,74 @@
+<div id="box" style="width: 300px; height: 300px; background-color: red">
+    <br>
+</div>
+
+<div>
+    Pilih Warna Box : 
+    <select id="color-list">
+        <option value="red" checked>Red</option>
+        <option value="green" checked>green</option>
+        <option value="Blue" checked>Blue</option>
+        <option value="Yellow" checked>Yellow</option>
+        <option value="Gray" checked>Gray</option>
+    </select>
+</div>
+
+<div>
+    Pilih Ukuran Box : 
+    <select id="size-list">
+        <option value="200" checked>200</option>
+        <option value="300" checked>300</option>
+        <option value="400" checked>400</option>
+    </select>
+</div>
+
+<div>
+    Tampilan Box : 
+    <select id="box-show">
+        <option value="show" checked>show</option>
+        <option value="hide" checked>hide</option>
+    </select>
+</div>
+
+<!-- <script>
+    var box = document.getElementById("box");
+    var colorlist = document.getElementById("color-list");
+    colorlist.addEventListener('change', function(event){
+        box.style.backgroundColor = event.target.value;
+    });
+</script> -->
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
+<script>
+    $(document).ready(function(){
+        var box = $('#box');
+        var colorList = $('#color-list')
+        var sizeList = $('#size-list')
+        var boxshow = $('#box-show')
+
+        //color list
+        colorList.on('change', function(eventSelect) {
+            box.css('backgroundColor', eventSelect.target.value);
+        });
+
+        //ukuran
+        sizeList.on('change', function(eventSelect) {
+            box.css('width', eventSelect.target.value);
+            box.css('height', eventSelect.target.value);
+        });
+
+        //show
+       boxshow.on('change', function(eventSelect) {
+           if(eventSelect.target.value == "show") {
+            //    box.css('display', 'block');
+               box.show(600);
+           } else {
+            // box.css('display', 'none');
+               box.hide(600);
+           }
+        });
+
+
+    });
+</script>

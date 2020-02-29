@@ -1,0 +1,20 @@
+<div id="box" style="width: 300px; height: 300px; background-color: red"></div>
+<br />
+<div>
+  Pilih Warna Box : 
+  <select id="color-list">
+    <option value="red" checked>Red</option>
+    <option value="green" checked>Green</option>
+    <option value="blue" checked>Blue</option>
+    <option value="yellow" checked>Yellow</option>
+    <option value="gray" checked>Gray</option>
+  </select>
+</div>
+
+<script>
+  var box = document.getElementById("box");
+  var colorList = document.getElementById("color-list")
+  colorList.addEventListener('change', function(e){
+    box.style.backgroundColor = e.target.value;
+  });
+</script>

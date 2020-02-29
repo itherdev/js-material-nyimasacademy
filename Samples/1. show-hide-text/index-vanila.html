@@ -1,0 +1,16 @@
+<p id="text">Hi ini text tampil loh</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+<script>
+  var textElement = document.getElementById('text');
+
+  document.getElementById('hide').addEventListener('click', function(){
+    textElement.style.visibility = 'hidden';
+  });
+
+  document.getElementById('show').addEventListener('click', function(){
+    textElement.style.visibility = 'visible';
+  });
+</script>
